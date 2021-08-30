@@ -3,7 +3,6 @@ import Books from "../Containers/Books";
 import Container from "../Containers/container/container";
 import { GlobalStyles } from "../styles/GlobalStyles";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "../Containers/Header/header";
 
 export default function Home({ listdata, booksdata }) {
   return (

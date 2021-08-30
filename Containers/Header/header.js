@@ -1,37 +1,39 @@
-import { faSave } from "@fortawesome/free-regular-svg-icons";
+import { faMoon, faSave, faSun } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button } from "@material-ui/core";
 import React from "react";
+import { useState } from "react";
 import HeaderWrapper from "../../Wrappers/headerWrapper";
-import Container from "../container/container";
 
-const Header = () => {
+const Header = ({ toggle, theme }) => {
   return (
-    <Container>
-      <HeaderWrapper>
-        <header className="header">
+    <HeaderWrapper>
+      <header className="header">
+        <div className="container">
           <div className="d-flex justify-content-between align-items-center">
             <div>
               <img
-                className="logo"
-                src="https://www.algorismic.uz/images/algorismic-02.svg"
+                className="logo w-100 text-dark"
+                src="algorismic.svg"
                 alt="rasm"
               />
             </div>
             <div>
-              <ul>
-                <li>Book store</li>
-                <li>Wishlist</li>
-                <li>My collection</li>
+              <ul className="d-flex py-4 m-0">
+                <li className="px-3">Book store</li>
+                <li className="px-3">Wishlist</li>
+                <li className="px-3">My collection</li>
               </ul>
             </div>
-            <div>
-              <FontAwesomeIcon icon={faSave} />
-              <button className="btn btn-primary">sign</button>
+            <div className="d-flex align-items-center">
+              <Button className="text-white" onClick={toggle}>
+                <FontAwesomeIcon icon={theme == "light" ? faSun : faMoon} />
+              </Button>
             </div>
           </div>
-        </header>
-      </HeaderWrapper>
-    </Container>
+        </div>
+      </header>
+    </HeaderWrapper>
   );
 };
 
